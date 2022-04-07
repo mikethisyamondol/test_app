@@ -1,0 +1,9 @@
+pylint
+pytest
+black
+numpy
+pandas
+requests
+google-cloud-bigquery-storage
+google-cloud-bigquery
+google
