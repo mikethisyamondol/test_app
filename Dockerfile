@@ -7,7 +7,6 @@ WORKDIR /app
 COPY . app.py /app/
 
 # Install packages from requirements.txt
-# hadolint ignore=DL3013
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8080
