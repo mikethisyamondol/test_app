@@ -1,5 +1,5 @@
-from app import add
+from app import home
 
 
-def test_add():
-    assert 2 == add(1, 1)
+def test_home():
+    assert "Hello World!" == home()
