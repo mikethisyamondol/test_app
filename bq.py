@@ -9,7 +9,7 @@ def bq(query):
 
 
     dataframe = (
-        bqclient.query(query)
+        client.query(query)
         .result()
         .to_dataframe(
             # Optionally, explicitly request to use the BigQuery Storage API. As of
