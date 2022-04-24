@@ -26,3 +26,29 @@ jobs:
     - name: Format code
       run: |
         make format
+
+  deploy:
+    #needs: build
+    runs-on: ubuntu-latest
+    steps:
+      # defaults to repo that this github actions file is in
+      - name: checkout
+        uses: actions/checkout@v3
+
+#      - name: Deploy an App Engine
+#        uses: google-github-actions/deploy-appengine@v0.8.0
+##        with:
+##          # ${{ github actions syntax
+##          credentials: ${{ secrets.gcp_credentials }}
+
+      # Setup gcloud CLI
+      - name: Setup gcloud CLI
+        uses: google-github-actions/setup-gcloud@main
+        with:
+          service_account_key: ${{ secrets.GCP_CREDS }}
+          export_default_credentials: true
+
+      - name: Deploy Backend to App Engine Develop
+        run: |
+          gcloud config set project smiling-stock-345514
+          gcloud app deploy --version 20220417t191438
