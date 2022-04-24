@@ -1,6 +1,6 @@
 from flask import Flask
-from flask_restful import Api
-from bq import bq
+#from flask_restful import Api
+#from bq import bq
 
 
 app = Flask(__name__)
