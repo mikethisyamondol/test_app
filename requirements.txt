@@ -5,7 +5,8 @@ numpy
 pandas
 requests
 google-cloud-bigquery-storage
-google-cloud-bigquery==2.34.1
+google-cloud-bigquery
 google
 flask
+flask_restful
 gunicorn
