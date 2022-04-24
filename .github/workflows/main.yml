@@ -51,4 +51,4 @@ jobs:
       - name: Deploy Backend to App Engine Develop
         run: |
           gcloud config set project smiling-stock-345514
-          gcloud app deploy --version 20220417t191438
+          gcloud app deploy --version 20220424t192404
