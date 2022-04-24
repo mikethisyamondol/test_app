@@ -10,3 +10,4 @@ google
 flask
 flask_restful
 gunicorn
+db_dtypes
