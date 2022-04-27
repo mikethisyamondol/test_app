@@ -50,5 +50,5 @@ jobs:
 
       - name: Deploy Backend to App Engine Develop
         run: |
-          gcloud config set project $(echo secrets.GCP_CREDS | jq -r .project_id)
+          gcloud config set project $(echo secrets.GCP_CREDS | jq -R .project_id)
           gcloud app deploy --version 20220424t192404
