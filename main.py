@@ -5,7 +5,7 @@ from flask_restful import Api
 
 
 app = Flask(__name__)
-api = Api(app)
+# api = Api(app)
 
 # query = '''
 # with double_entry_book as (
@@ -46,10 +46,15 @@ api = Api(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    request_data = request.get_json()
+    inputs = request.get_json()
+	print(inputs)
+	question = inputs['question']
+	answer   = inputs['context']
+
+    return qna(question, answer)
     # return bq(query)
     # return jsonify(qna(request_data))
-    return request_data
+    # return request_data
 
 
 if __name__ == "__main__":
