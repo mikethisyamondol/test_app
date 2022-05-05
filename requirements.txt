@@ -11,3 +11,5 @@ flask
 flask_restful
 gunicorn
 db_dtypes
+transformers
+sentencepiece
