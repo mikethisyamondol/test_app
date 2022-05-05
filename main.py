@@ -1,7 +1,6 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_restful import Api
 # from bq import bq
-from requests import request
 from question_answering import qna
 
 
@@ -47,7 +46,7 @@ api = Api(app)
 
 @app.route("/", methods=['POST'])
 def home():
-    request_data = request.json()
+    request_data = request.get_json()
     # return bq(query)
     return qna(request_data)
 
