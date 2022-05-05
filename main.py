@@ -47,7 +47,7 @@ api = Api(app)
 
 @app.route("/", methods=['POST'])
 def home():
-    request_data = request.get_json()
+    request_data = request.json()
     # return bq(query)
     return qna(request_data)
 
