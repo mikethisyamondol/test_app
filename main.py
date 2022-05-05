@@ -1,7 +1,7 @@
-from flask import Flask, request , jsonify
+from flask import Flask, request #, jsonify
 from flask_restful import Api
 # from bq import bq
-from question_answering import qna
+# from question_answering import qna
 
 
 app = Flask(__name__)
@@ -48,8 +48,8 @@ api = Api(app)
 def home():
     request_data = request.get_json()
     # return bq(query)
-    return jsonify(qna(request_data))
-    # return request_data
+    # return jsonify(qna(request_data))
+    return request_data
 
 
 if __name__ == "__main__":
