@@ -47,10 +47,10 @@ app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
 def home():
     inputs = request.get_json()
-	print(inputs)
-	question = inputs['question']
-	answer   = inputs['context']
-
+    print(inputs)
+    question = inputs['question']
+    answer   = inputs['context']
+    
     return qna(question, answer)
     # return bq(query)
     # return jsonify(qna(request_data))
