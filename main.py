@@ -1,11 +1,11 @@
 from flask import Flask, request #, jsonify
-# from flask_restful import Api
+from flask_restful import Api
 # from bq import bq
 from question_answering import qna
 
 
 app = Flask(__name__)
-# api = Api(app)
+api = Api(app)
 
 # query = '''
 # with double_entry_book as (
