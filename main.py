@@ -44,7 +44,7 @@ api = Api(app)
 # limit 100;
 # '''
 
-@app.route("/", methods=['POST'])
+@app.route("/", methods=['GET', 'POST'])
 def home():
     request_data = request.get_json()
     # return bq(query)
