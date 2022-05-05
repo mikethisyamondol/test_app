@@ -13,3 +13,4 @@ gunicorn
 db_dtypes
 transformers
 sentencepiece
+torch
