@@ -48,7 +48,7 @@ api = Api(app)
 def home():
     request_data = request.get_json()
     # return bq(query)
-    return qna(request_data)
+    return jsonify(qna(request_data))
 
 
 if __name__ == "__main__":
