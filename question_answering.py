@@ -1,4 +1,4 @@
-from flask import Flask,request, jsonify
+from flask import Flask,request
 from transformers import AutoTokenizer,AutoModelForQuestionAnswering
 import torch
 
@@ -37,5 +37,5 @@ def qna(question, answer):
 
 	answer = ' '.join(tokens[answer_start:answer_end+1])
 	print(answer)
-	return jsonify({'Answer':answer})
+	return {'Answer':answer}
 

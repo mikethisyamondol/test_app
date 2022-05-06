@@ -1,4 +1,4 @@
-from flask import Flask, request #, jsonify
+from flask import Flask, request, jsonify
 from flask_restful import Api
 # from bq import bq
 from question_answering import qna
@@ -46,11 +46,12 @@ api = Api(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
+    headers={ "Content-Type": "application/json"}
     inputs = request.json()
     question = inputs['question']
     answer   = inputs['context']
     
-    return qna(question, answer)
+    return jsonify(qna(question, answer)), headers
     # return bq(query)
     # return jsonify(qna(request_data))
     # return request_data
