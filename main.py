@@ -50,7 +50,7 @@ def home():
     question = inputs['question']
     answer   = inputs['context']
     
-    return jsonify(qna(question, answer)), headers
+    return jsonify(qna(question, answer))
     # return bq(query)
     # return jsonify(qna(request_data))
     # return request_data
