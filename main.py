@@ -46,8 +46,7 @@ api = Api(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    headers={ "Content-Type": "application/json"}
-    inputs = request.json()
+    inputs = request.get_json()
     question = inputs['question']
     answer   = inputs['context']
     
