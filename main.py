@@ -48,9 +48,9 @@ api = Api(app)
 def home():
     inputs = request.get_json()
     question = inputs['question']
-    answer   = inputs['context']
+    context   = inputs['context']
     
-    return jsonify(qna(question, answer))
+    return jsonify(qna(question, context))
     # return bq(query)
     # return jsonify(qna(request_data))
     # return request_data

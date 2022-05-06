@@ -10,7 +10,7 @@ import torch
 #     result = nlp(input)
 #     return result 
 
-def qna(question, answer):
+def qna(question, context):
 	#model and tokeniser from Hugging face
 	tokenizer =  AutoTokenizer.from_pretrained('deepset/bert-base-cased-squad2')
 	model = AutoModelForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')
@@ -18,7 +18,7 @@ def qna(question, answer):
 	#Use model 'ponmari/QuestionAnsweingBert'
 
 	
-	input_ids = tokeniser.encode(question, answer)
+	input_ids = tokeniser.encode(question, context)
 	
 	sep_index = input_ids.index(tokenizer.sep_token_id)
 
