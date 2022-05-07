@@ -46,11 +46,11 @@ api = Api(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    if request.method = 'POST':
+    if request.method == 'POST':
         inputs = request.get_json()
         question = inputs['question']
         context   = inputs['context']
-        
+
         return jsonify(qna(question, context))
 
 
