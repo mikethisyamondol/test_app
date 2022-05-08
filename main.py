@@ -46,7 +46,7 @@ api = Api(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    if request.method == 'POST':
+    if request.method == 'GET':
         inputs = request.get_json()
         question = inputs['question']
         context   = inputs['context']
