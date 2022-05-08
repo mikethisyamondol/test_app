@@ -3,7 +3,7 @@
 # from bq import bq
 from question_answering import qna
 from fastapi import FastAPI
-# import uvicorn
+import uvicorn
 
 
 # app = Flask(__name__)
@@ -66,5 +66,5 @@ async def root(question: str, context: str):
     return qna(question, context)
 
 if __name__ == '__main__':
-    # uvicorn.run(app, port=8080, host='0.0.0.0')
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    uvicorn.run(app, port=8080, host='0.0.0.0')
+    # app.run(host="0.0.0.0", port=8080, debug=True)
