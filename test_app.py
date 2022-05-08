@@ -1,4 +1,4 @@
-from main import home
+from main import root
 
 
 def test_home():
