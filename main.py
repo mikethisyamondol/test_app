@@ -64,8 +64,8 @@ app = FastAPI()
 async def root():
     return {"message": "Welcome"}
 
-@app.get("/qna/{question}/{context}")
-async def root(question: str, context: str):
+@app.get("/answer/{question}/{context}")
+async def answer(question: str, context: str):
     return qna(question, context)
 
 if __name__ == '__main__':
