@@ -3,7 +3,7 @@
 # from bq import bq
 from question_answering import qna
 from fastapi import FastAPI
-import uvicorn
+# import uvicorn
 
 
 # app = Flask(__name__)
