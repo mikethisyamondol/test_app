@@ -14,3 +14,4 @@ db_dtypes
 transformers
 sentencepiece
 torch
+uvicorn

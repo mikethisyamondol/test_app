@@ -1,4 +1,3 @@
-from flask import Flask,request
 from transformers import AutoTokenizer,AutoModelForQuestionAnswering
 import torch
 

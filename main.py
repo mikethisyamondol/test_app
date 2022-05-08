@@ -1,11 +1,13 @@
-from flask import Flask, request, jsonify
-from flask_restful import Api
+# from flask import Flask, request, jsonify
+# from flask_restful import Api
 # from bq import bq
 from question_answering import qna
+from fastapi import FastAPI
+import uvicorn
 
 
-app = Flask(__name__)
-api = Api(app)
+# app = Flask(__name__)
+# api = Api(app)
 
 # query = '''
 # with double_entry_book as (
@@ -44,15 +46,24 @@ api = Api(app)
 # limit 100;
 # '''
 
-@app.route("/", methods=['GET', 'POST'])
-def home():
-    if request.method == 'GET':
-        inputs = request.get_json()
-        question = inputs['question']
-        context   = inputs['context']
+# @app.route("/", methods=['GET', 'POST'])
+# def home():
+#     # if request.method == 'GET':
+#     inputs = request.get_json()
+#     question = inputs['question']
+#     context   = inputs['context']
 
-        return jsonify(qna(question, context))
+#     return jsonify(qna(question, context))
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=8080, debug=True)
+
+app = FastAPI()
+
+@app.get("/{question}/{context}")
+async def root():
+    return qna(question, context)
+
+if __name__ == '__main__':
+    uvicorn.run(app, port=8080, host='0.0.0.0')
