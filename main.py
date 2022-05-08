@@ -62,7 +62,7 @@ import uvicorn
 app = FastAPI()
 
 @app.get("/{question}/{context}")
-async def root():
+async def root(question: str, context: str)):
     return qna(question, context)
 
 if __name__ == '__main__':
