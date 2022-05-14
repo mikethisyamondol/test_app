@@ -1,6 +1,3 @@
-# from flask import Flask, request, jsonify
-# from flask_restful import Api
-# from bq import bq
 from question_answering import qna
 from fastapi import FastAPI
 import uvicorn
