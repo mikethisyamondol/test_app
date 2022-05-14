@@ -3,12 +3,12 @@ from transformers import pipeline #AutoTokenizer,AutoModelForQuestionAnswering
 
 
 def qna(question,context):
-    model_name = "deepset/roberta-base-squad2"
-    nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
+	model_name = "deepset/roberta-base-squad2"
+	nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
 	input = {'question': question,
 			'context': context}
-    result = nlp(input)
-    return {'Answer': result}
+	result = nlp(input)
+	return {'Answer': result}
 
 # def qna(question, context):
 # 	#model and tokeniser from Hugging face
