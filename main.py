@@ -10,7 +10,7 @@ app = FastAPI()
 async def root():
     return {"message": "Welcome"}
 
-@app.post("/answer/{question}/{context}")
+@app.get("/answer/{question}/{context}")
 async def answer(question: str, context: str):
     model_name = "deepset/roberta-base-squad2"
     nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
