@@ -12,10 +12,15 @@ async def root():
 
 @app.get("/answer/{question}/{context}")
 async def answer(question: str, context: str):
+    print('hello')
     model_name = "deepset/roberta-base-squad2"
+    print('hello1')
     nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
+    print('hello2')
     qa_input = {'question': question, 'context': context}
+    print('hello3')
     result = nlp(qa_input)
+    print('hello4')
     return {'Answer': result}
     # return qna(question, context)
 
