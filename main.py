@@ -1,6 +1,7 @@
-from question_answering import qna
+# from question_answering import qna
 from fastapi import FastAPI
 import uvicorn
+from transformers import pipeline
 
 
 app = FastAPI()
@@ -11,7 +12,13 @@ async def root():
 
 @app.post("/answer/{question}/{context}")
 async def answer(question: str, context: str):
-    return qna(question, context)
+    # return qna(question, context)
+    model_name = "deepset/roberta-base-squad2"
+	nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
+	input = {'question': question,
+			'context': context}
+	result = nlp(input)
+	return {'Answer': result}
 
 
 if __name__ == '__main__':
