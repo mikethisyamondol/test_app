@@ -12,7 +12,7 @@ async def root():
 
 @app.get("/answer/{question}/{context}")
 async def answer(question: str, context: str):
-    print('hello')
+    print('hello0')
     model_name = "deepset/roberta-base-squad2"
     print('hello1')
     nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
