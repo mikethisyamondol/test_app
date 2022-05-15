@@ -53,5 +53,4 @@ jobs:
       - name: Deploy Backend to App Engine Develop
         run: |
           gcloud config set project $GCLOUD_PROJECT
-          gcloud app deploy --quiet --promote --stop-previous-version
-        # --version 20220424t192404s
+          gcloud app deploy --version 20220515t211714
