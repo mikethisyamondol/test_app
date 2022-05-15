@@ -14,9 +14,8 @@ async def root():
 async def answer(question: str, context: str):
     model_name = "deepset/roberta-base-squad2"
     nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
-    input = {'question': question,
-			'context': context}
-    result = nlp(input)
+    qa_input = {'question': question, 'context': context}
+    result = nlp(qa_input)
     return {'Answer': result}
     # return qna(question, context)
 
