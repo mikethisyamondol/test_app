@@ -15,7 +15,7 @@ async def answer(question: str, context: str):
     print('hello0')
     model_name = "deepset/roberta-base-squad2"
     print('hello1')
-    nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
+    nlp = pipeline('question-answering')#, model=model_name, tokenizer=model_name)
     print('hello2')
     qa_input = {'question': question, 'context': context}
     print('hello3')
