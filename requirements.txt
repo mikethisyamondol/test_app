@@ -15,4 +15,4 @@ transformers
 sentencepiece
 fastapi
 uvicorn
-tensorflow
+tensorflow >= 2.0
