@@ -15,4 +15,4 @@ transformers
 sentencepiece
 fastapi
 uvicorn
-torch
+tensorflow
