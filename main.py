@@ -1,10 +1,9 @@
-# from question_answering import qna
 from fastapi import FastAPI
 import uvicorn
 import requests
-import json
 import os
 # from transformers import pipeline
+# from question_answering import qna
 
 
 app = FastAPI()
