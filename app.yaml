@@ -6,6 +6,9 @@ runtime: python39
 # entrypoint: gunicorn -b :$PORT main:app
 entrypoint: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
 
+env:
+  API_KEY: ${{ secrets.HF_KEY }}
+
 handlers:
   - url: /.*
     script: main.app

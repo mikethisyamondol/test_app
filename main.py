@@ -3,6 +3,7 @@ from fastapi import FastAPI
 import uvicorn
 import requests
 import json
+import os
 # from transformers import pipeline
 
 
@@ -15,7 +16,7 @@ async def root():
 @app.get("/answer/{question}/{context}")
 async def answer(question: str, context: str):
     API_URL = "https://api-inference.huggingface.co/models/deepset/roberta-base-squad2"
-    headers = {"Authorization": f"Bearer {${{ secrets.HF_KEY }}}"}
+    headers = {"Authorization": f"Bearer {os.environ['API_KEY']}"}
     payload = {'question': question, 'context': context}
     response = requests.post(API_URL, headers=headers, json=payload)
     return response.json()
