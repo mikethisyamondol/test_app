@@ -49,10 +49,10 @@ jobs:
         with:
           service_account_key: ${{ secrets.GCP_CREDS }}
           export_default_credentials: true 
-        env:
-          API_KEY: ${{ secrets.HF_KEY }}
 
       - name: Deploy Backend to App Engine Develop
+        env:
+          API_KEY: ${{ secrets.HF_KEY }}
         run: |
           gcloud config set project $GCLOUD_PROJECT
           gcloud app deploy --version 20220515t211714
