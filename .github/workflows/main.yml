@@ -13,8 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
-        env: 
-            API_KEY: ${{ secrets.HF_KEY }}
         uses: actions/setup-python@v1
         with:
           python-version: 3.8
@@ -50,7 +48,8 @@ jobs:
         uses: google-github-actions/setup-gcloud@main
         with:
           service_account_key: ${{ secrets.GCP_CREDS }}
-          export_default_credentials: true
+          export_default_credentials: true 
+          API_KEY: ${{ secrets.HF_KEY }}
 
       - name: Deploy Backend to App Engine Develop
         run: |
