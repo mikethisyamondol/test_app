@@ -18,7 +18,7 @@ async def answer(question: str, context: str):
     headers = {"Authorization": f"Bearer {${{ secrets.HF_KEY }}}"}
     payload = {'question': question, 'context': context}
     response = requests.post(API_URL, headers=headers, json=payload)
-	return response.json()
+    return response.json()
    
 
 if __name__ == '__main__':
