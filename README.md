@@ -1,4 +1,5 @@
 [![prod build](https://github.com/mikethisyamondol/test_app/actions/workflows/main.yml/badge.svg)](https://github.com/mikethisyamondol/test_app/actions/workflows/main.yml)
+[![dev build](https://github.com/mikethisyamondol/test_app/actions/workflows/dev.yml/badge.svg)](https://github.com/mikethisyamondol/test_app/actions/workflows/dev.yml)
 
 # Skeleton App with GCP
 
