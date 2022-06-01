@@ -9,7 +9,7 @@ This app was built as a skeleton or scaffolding for future MLOps projects where 
 
 This repository contains two branches: main (prod) and dev, which are associated to different yaml files within .github/workflows that dictate the environment build and the deployment to Google App Engine via GitHub Actions. The statuses of each environment can be seen in the status badges above labeled "prod build" for the production environment and "dev build" for the development environment. Each environment is associated with different projects within GCP and thus produces separate app URLs to work in. The best practice is to develop within the development environment in the dev branch, and once QAed, can be merged into the main brance via Pull Request.
 
-As it stands right now, the microservice accepts two parameters: question and context which are inputs for the question answering model. We can use Swagger UI to test out the API by adding "/docs" to the end of the app URL. 
+For this particular example, the roberta-base question answering model using the SQuAD2.0 dataset accepts two parameters: question and context which are inputs for the question answering model. We can use Swagger UI to test out the API in a user friendly fashion by adding "/docs" to the end of the app URL. 
 
 <img width="1387" alt="Screen Shot 2022-06-01 at 9 02 08 AM" src="https://user-images.githubusercontent.com/12674202/171489675-c523ffb8-bbcb-4f39-8fc7-a300355aad56.png">
 
